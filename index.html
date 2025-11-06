@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome 6 CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <title>EMA - Services</title>
+    <style>
+        /* ICI VOUS COLLEZ LE CSS COMPLET QUE JE VOUS AI DONNÉ PRÉCÉDEMMENT */
+    </style>
+</head>
+    
+<body>
+    <!-- Navigation -->
+    <div class="dan-container">
+        <div class="dan">
+            <div class="nav-item" id="nav-transport">
+                <i class="fa-solid fa-taxi"></i>
+                <span>Transport</span>
+            </div>
+            <div class="nav-item" id="nav-livraison">
+                <i class="fa-solid fa-truck"></i>
+                <span>Livraison</span>
+            </div>
+            <div class="nav-item" id="nav-restaurant">
+                <i class="fa-solid fa-utensils"></i>
+                <span>Restaurant</span>
+            </div>
+            <div class="nav-item active" id="nav-hotel">
+                <i class="fa-solid fa-square-h"></i>
+                <span>Hôtel</span>
+            </div>
+            <div class="nav-item" id="nav-boutique">
+                <i class="fa-solid fa-store"></i>
+                <span>Boutique</span>
+            </div>
+            <div class="nav-item" id="nav-profil">
+                <i class="fa-solid fa-user"></i>
+                <span>Profil</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="container-categorie">
+        <h2>EMA</h2>
+        <div class="point">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+        </div>
+        <div class="point">
+            <i class="fa-solid fa-basket-shopping"></i>
+        </div>
+    </div>
+
+    <!-- Image Pub -->
+<!--     <img src="Hotel mood bord.jpg" class="pub" alt="Promotion Hôtel">
+ -->
+    <!-- Sections de contenu -->
+    
+    <!-- Section Hôtel (active par défaut) -->
+    <section class="section active" id="section-hotel">
+        <div class="container">
+            <div class="mini-container">
+                <img src="image.png" class="img" alt="Chambre de luxe">
+                <p>Chambre de luxe</p>
+                <div class="icone-h">
+                    <i class="fa-solid fa-utensils"></i>
+                    <i class="fa-solid fa-person-swimming"></i>
+                    <i class="fa-solid fa-square-parking"></i>
+                    <i class="fa-solid fa-wifi"></i>
+                </div>
+                <button class="button">Reserver</button>
+            </div>
+            <div class="mini-container">
+                <img src="image.png" class="img" alt="Chambre standard">
+                <p>Chambre standard</p>
+                <div class="icone-h">
+                    <i class="fa-solid fa-utensils"></i>
+                    <i class="fa-solid fa-wifi"></i>
+                </div>
+                <button class="button">Reserver</button>
+            </div>
+            <div class="mini-container">
+                <img src="image.png" class="img" alt="Suite présidentielle">
+                <p>Suite présidentielle</p>
+                <div class="icone-h">
+                    <i class="fa-solid fa-utensils"></i>
+                    <i class="fa-solid fa-person-swimming"></i>
+                    <i class="fa-solid fa-square-parking"></i>
+                    <i class="fa-solid fa-wifi"></i>
+                    <i class="fa-solid fa-tv"></i>
+                </div>
+                <button class="button">Reserver</button>
+            </div>
+            <div class="mini-container">
+                <img src="image.png" class="img" alt="Chambre familiale">
+                <p>Chambre familiale</p>
+                <div class="icone-h">
+                    <i class="fa-solid fa-utensils"></i>
+                    <i class="fa-solid fa-person-swimming"></i>
+                    <i class="fa-solid fa-wifi"></i>
+                </div>
+                <button class="button">Reserver</button>
+            </div>
+            <div class="mini-container">
+                <img src="image.png" class="img" alt="Chambre affaires">
+                <p>Chambre affaires</p>
+                <div class="icone-h">
+                    <i class="fa-solid fa-utensils"></i>
+                    <i class="fa-solid fa-wifi"></i>
+                    <i class="fa-solid fa-desktop"></i>
+                </div>
+                <button class="button">Reserver</button>
+            </div>
+            <div class="mini-container">
+                <img src="image.png" class="img" alt="Chambre romantique">
+                <p>Chambre romantique</p>
+                <div class="icone-h">
+                    <i class="fa-solid fa-utensils"></i>
+                    <i class="fa-solid fa-wifi"></i>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <button class="button">Reserver</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Transport -->
+    <section class="section" id="section-transport">
+        <div class="container-contenu">
+            <div class="ajuste">
+                <h2 class="reserver">Reserver une course</h2>
+                <p class="message-destination">Entrez votre destination pour voir les prix.</p>
+                <div class="destination">
+                    <input type="text" class="destination-ou" name="ou" id="user-depart" placeholder="📍Ou etes vous?">
+                    <input type="text" class="destination-ou" name="la-place" id="user-arrivee" placeholder="📍Ou allez vous?">
+                    <button class="btn">Voir le cout</button>
+                </div>
+
+                <p class="message-destination">Choisissez une course</p>
+
+                <div class="choix-course">
+                    <div class="choix">
+                        <div class="type">
+                            <h4>Economie</h4>
+                            <p>500cfa</p>
+                        </div>
+                        <div class="icone">
+                            <i class="fa-solid fa-taxi"></i>
+                        </div>
+                    </div>
+                    <div class="choix">
+                        <div class="type">
+                            <h4>Confort</h4>
+                            <p>750cfa</p>
+                        </div>
+                        <div class="icone">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                    </div>
+                    <div class="choix">
+                        <div class="type">
+                            <h4>Ultime</h4>
+                            <p>1000cfa</p>
+                        </div>
+                        <div class="icone">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                    </div>
+                    <div class="choix">
+                        <div class="type">
+                            <h4>Moto</h4>
+                            <p>300cfa</p>
+                        </div>
+                        <div class="icone">
+                            <i class="fa-solid fa-motorcycle"></i>
+                        </div>
+                    </div>
+                    <div class="payer">
+                        <p class="paiement">Mode de paiement</p>
+                        <span><i class="fa-solid fa-credit-card"></i>Visa ****4242</span>
+                        <p class="changer">Changer</p>
+                    </div>
+                    <input type="text" class="montant-precis" placeholder="💰Montant a payer">
+                    <button class="btn">Commander →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Livraison -->
+    <section class="section" id="section-livraison">
+        <div class="section-placeholder">
+            <h2>Service de Livraison</h2>
+            <p>Bientôt disponible</p>
+            <i class="fa-solid fa-truck" style="font-size: 48px; color: #0088cc; margin: 20px 0;"></i>
+            <p>Livraison rapide et sécurisée dans toute la ville</p>
+        </div>
+    </section>
+
+    <!-- Section Restaurant -->
+    <section class="section" id="section-restaurant">
+        <div class="section-placeholder">
+            <h2>Restaurants Partenaires</h2>
+            <p>Bientôt disponible</p>
+            <i class="fa-solid fa-utensils" style="font-size: 48px; color: #0088cc; margin: 20px 0;"></i>
+            <p>Découvrez les meilleurs restaurants de la ville</p>
+        </div>
+    </section>
+
+    <!-- Section Boutique -->
+    <section class="section" id="section-boutique">
+        <div class="section-placeholder">
+            <h2>Boutique en ligne</h2>
+            <p>Bientôt disponible</p>
+            <i class="fa-solid fa-store" style="font-size: 48px; color: #0088cc; margin: 20px 0;"></i>
+            <p>Produits locaux et artisanaux</p>
+        </div>
+    </section>
+
+    <!-- Section Profil -->
+    <section class="section" id="section-profil">
+        <div class="section-placeholder">
+            <h2>Mon Profil</h2>
+            <p>Bientôt disponible</p>
+            <i class="fa-solid fa-user" style="font-size: 48px; color: #0088cc; margin: 20px 0;"></i>
+            <p>Gérez vos réservations et préférences</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h1>Nos contacts</h1>
+        <p style="color: #eee; margin-top: 10px;">Email: contact@ema.com | Tél: +241 XX XX XX XX</p>
+        <p style="color: #eee; margin-top: 5px;">© 2024 EMA Services. Tous droits réservés.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
