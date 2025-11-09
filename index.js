@@ -38,14 +38,14 @@
             });
 
             // Afficher la section hôtel par défaut
-            showSection('section-hotel');
+            showSection('section-boutique');
 
             // Gestion des réservations hôtel
             document.querySelectorAll('.button').forEach(button => {
                 button.addEventListener('click', function() {
                     const chambreType = this.parentElement.querySelector('p').textContent;
                     alert(`Réservation de la ${chambreType} en cours...\nFonctionnalité bientôt disponible !`);
-                });
+                }); 
             });
 
             // Gestion des courses transport
