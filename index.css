@@ -119,12 +119,12 @@ body {
 .pub {
     display: block;
     width: 90%;
-    max-width: 520px;
-    height: auto;
+    max-width: 500px;
+    height: 200px;
     margin: 80px auto 20px;
     border-radius: 40px;
-    border: 2px solid #009c00a9;
-    box-shadow: 0 8px 30px rgba(0, 192, 0, 0.202);
+    border: 2px solid #ffffff;
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.421);
     object-fit: cover;
     transition: all 0.3s ease;
 }
