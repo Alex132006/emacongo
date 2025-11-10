@@ -151,14 +151,6 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-h2 {
-    margin: 0;
-    font-size: 20px;
-    color: #000000;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
 .point {
     width: 40px;
     height: 40px;
@@ -257,14 +249,6 @@ h2 {
     padding-top: 10px;
 }
 
-p {
-    font-family: "Cinzel", serif;
-    margin: 5px 0;
-    font-size: 13px;
-    font-weight: bold;
-    color: #333;
-}
-
 .button {
     color: #000000;
     border: 1px solid #ddd;
@@ -336,6 +320,7 @@ p {
     text-align: center;
 }
 
+/*SECTION TRANSPORT*/
 .message-destination {
     color: #616161;
     text-align: center;
