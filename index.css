@@ -180,13 +180,14 @@ body {
     display: block;
 }
 
-/* STYLE HOTEL */
+/* STYLE ajuste */
 .container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     padding: 20px 15px;
-    margin-top: 0;
+    margin-top: -90px;
+    margin-bottom: 100px;
     width: 100%;
     max-width: 100%;
 }
