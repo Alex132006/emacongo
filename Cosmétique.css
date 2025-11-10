@@ -143,6 +143,12 @@ body {
     border-radius: 15px;
     margin-top: -30px;
 }
+.fa-cart-shopping:hover::before {
+    background: rgba(240, 240, 240, 0);
+    box-shadow: 0 8px 30px rgba(0, 192, 0, 0.2);
+    transform: translateY(-5px) scale(1.2);
+    color: #6cbf6c;
+}
 
 .somme{
     display: flex;
@@ -154,30 +160,52 @@ body {
 
 .fa-wallet, .montant {
     color: #c06600;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
 }
 
 .ancien-montant {
     color: rgb(125, 125, 125);
     text-decoration: line-through;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
+    position: relative;
+    top: 3px;
 }
 
 .nom-boutique {
     color: #000000;
     position: relative;
-    top: 8px;
-    font-family: ;
+    top: 7px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 14px;
 }
 .fa-certificate {
-    color: #0020c0;
-    position: relative;
-    
-    
+    color: #005eff;
 }
 
+.nom-produit {
+    position: relative;
+    top: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 12px;
+    gap: 15px;
+}
+.fa-star {
+    color: #9d7900;
+}
+.notes {
+    color: #8b8b8be3;
+    font-size: 14px;
+}
 
 
 
