@@ -1,0 +1,20 @@
+{
+  "name": "EMA service",
+  "short_name": "EMA",
+  "icons": [
+    {
+      "src": "alex.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "alex.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#000"
+}
