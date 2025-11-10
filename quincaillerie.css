@@ -1,0 +1,293 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #95b995dc;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    padding-bottom: 80px;
+    font-family: Arial, sans-serif;
+}
+
+
+.barre-recherche {
+    backdrop-filter: blur(100px);
+    background: #0071007f;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    z-index: 1;
+}
+
+.recherche {
+    padding: 5px 5px;
+    background: #ffffff50;
+    backdrop-filter: blur(10px);
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+.fa-magnifying-glass {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 19px;
+    margin: 5px;
+}
+
+.fa-arrow-left {
+    position: fixed;
+    top: 3px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    color: #000000;
+    background: #e1e1e1ca;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* STYLE Cosmetique */
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px 15px;
+    margin-top: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.mini-container {
+    background: rgba(240, 240, 240, 0.8);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.mini-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.mini-container:hover::before {
+    left: 100%;
+}
+
+.mini-container:hover {
+    background: rgba(240, 240, 240, 0.9);
+    border: 1px solid #00c000;
+    box-shadow: 0 8px 30px rgba(0, 192, 0, 0.2);
+    transform: translateY(-5px) scale(1.02);
+}
+
+.img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.fa-cart-shopping {
+    position: relative;
+    top: 210px;
+    left: 100px;
+    width: 35px;
+    height: 35px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #00c000;
+    border: 1px solid rgba(240, 240, 240, 0.8);
+    border-radius: 15px;
+    margin-top: -30px;
+}
+.fa-cart-shopping:hover::before {
+    background: rgba(240, 240, 240, 0);
+    box-shadow: 0 8px 30px rgba(0, 192, 0, 0.2);
+    transform: translateY(-5px) scale(1.2);
+    color: #6cbf6c;
+}
+
+.somme{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 5px;
+    gap: 10px;
+}
+
+.fa-wallet, .montant {
+    color: #c06600;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.ancien-montant {
+    color: rgb(125, 125, 125);
+    text-decoration: line-through;
+    font-size: 13px;
+    font-weight: bold;
+    position: relative;
+    top: 3px;
+}
+
+.nom-boutique {
+    color: #000000;
+    position: relative;
+    top: 7px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 14px;
+}
+.fa-certificate {
+    color: #005eff;
+}
+
+.nom-produit {
+    position: relative;
+    top: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 12px;
+    gap: 15px;
+}
+.fa-star {
+    color: #9d7900;
+}
+.notes {
+    color: #8b8b8be3;
+    font-size: 14px;
+}
+
+
+
+
+
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px 30px;
+    }
+    
+    .pub {
+        width: 70%;
+        max-width: 600px;
+        margin: 100px auto 30px;
+    }
+    
+    .container-contenu {
+        width: 400px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+        padding: 20px 40px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .dan {
+        max-width: 80%;
+    }
+    
+    .pub {
+        width: 60%;
+        max-width: 700px;
+        margin: 120px auto 40px;
+    }
+    
+    .container-contenu {
+        width: 450px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px 10px;
+    }
+    
+    .nav-item {
+        padding: 6px 8px;
+        min-width: 50px;
+    }
+    
+    .nav-item i {
+        font-size: 18px;
+    }
+    
+    .nav-item span {
+        font-size: 10px;
+    }
+    
+    .dan {
+        padding: 6px 15px;
+        max-width: 95%;
+    }
+    
+    .pub {
+        width: 95%;
+        margin: 70px auto 15px;
+        border-radius: 30px;
+    }
+    
+    .container-contenu {
+        width: 90%;
+        margin: 70px auto 20px;
+    }
+}
