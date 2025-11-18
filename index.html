@@ -1,290 +1,214 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Font Awesome 6 CDN -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Inscription & Connexion</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="shortcut icon" href="alex.jpg">
+    <link rel="shortcut icon" href="alex.css">
     <link rel="icon" href="alex.jpg" type="image/x-icon">
     <link rel="icon" href="alex.jpg" type="image/png" sizes="any">
     <link rel="apple-touch-icon" href="alex.jpg" sizes="180x180">
     <link rel="manifest" href="/manifest.json">
-    <title>EMA - Acceuil</title>
 </head>
-    
+
 <body>
-    <!-- Navigation -->
-    <div class="dan-container">
-        <div class="dan">
-            <div class="nav-item" id="nav-transport">
-                <i class="fa-solid fa-taxi"></i>
-                <span>Transport</span>
+    <div class="container">
+        <div class="auth-container">
+            <!-- Formulaire de Connexion -->
+            <div class="form-container login-form" id="loginFormContainer">
+                <h2>Connexion</h2>
+                <form id="loginForm">
+                    <!-- Sélection du type de connexion -->
+                    <div class="user-type-selection">
+                        <div class="user-type-option" data-type="buyer">
+                            <div class="user-type-icon">👤</div>
+                            <div class="user-type-label">Acheteur</div>
+                        </div>
+                        <div class="user-type-option" data-type="seller">
+                            <div class="user-type-icon">🏪</div>
+                            <div class="user-type-label">Vendeur</div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="loginUserType" name="loginUserType" value="buyer" required>
+                    <span class="error-message" id="loginUserTypeError"></span>
+
+                    <div class="input-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" required>
+                        <span class="error-message" id="loginEmailError"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="loginPassword">Mot de passe</label>
+                        <input type="password" id="loginPassword" required>
+                        <span class="error-message" id="loginPasswordError"></span>
+                    </div>
+                    <div class="options">
+                        <label>
+                            <input type="checkbox" id="rememberMe">
+                            Se souvenir de moi
+                        </label>
+                        <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                    </div>
+                    <button type="submit" class="btn-primary">Se connecter</button>
+                </form>
+                <p class="switch-form">
+                    Pas de compte ? <a href="#" id="showRegister">S'inscrire</a>
+                </p>
             </div>
-            <div class="nav-item" id="nav-livraison">
-                <i class="fa-solid fa-truck"></i>
-                <span>Livraison</span>
+
+            <!-- Formulaire d'Inscription -->
+            <div class="form-container register-form hidden" id="registerFormContainer">
+                <h2>Inscription</h2>
+                <form id="registerForm">
+                    <!-- Sélection du type d'utilisateur -->
+                    <div class="user-type-selection">
+                        <div class="user-type-option" data-type="buyer">
+                            <div class="user-type-icon">👤</div>
+                            <div class="user-type-label">Acheteur</div>
+                        </div>
+                        <div class="user-type-option" data-type="seller">
+                            <div class="user-type-icon">🏪</div>
+                            <div class="user-type-label">Vendeur</div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="userType" name="userType" value="buyer" required>
+                    <span class="error-message" id="userTypeError"></span>
+
+                    <!-- Indication des limitations pour les acheteurs -->
+                    <div class="buyer-limitation" id="buyerLimitation">
+                        <strong>Compte Acheteur</strong> - Accès limité : consultation uniquement
+                    </div>
+
+                    <!-- Informations de base (toujours visibles) -->
+                    <div class="basic-info-container">
+                        <div class="basic-info-title">Informations personnelles</div>
+                        <div class="input-group">
+                            <label for="registerName">Nom complet</label>
+                            <input type="text" id="registerName" required>
+                            <span class="error-message" id="registerNameError"></span>
+                        </div>
+                        <div class="input-group">
+                            <label for="registerEmail">Email</label>
+                            <input type="email" id="registerEmail" required>
+                            <span class="error-message" id="registerEmailError"></span>
+                        </div>
+                    </div>
+
+                    <!-- Champs spécifiques pour les vendeurs (masqués par défaut) -->
+                    <div class="seller-container" id="sellerContainer">
+                        <div class="seller-title">Informations de la boutique</div>
+                        <div class="input-group">
+                            <label for="storeName">Nom de la boutique</label>
+                            <input type="text" id="storeName">
+                            <span class="error-message" id="storeNameError"></span>
+                        </div>
+                        <div class="input-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone">
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+                        <div class="input-group">
+                            <label for="address">Adresse</label>
+                            <input type="text" id="address">
+                            <span class="error-message" id="addressError"></span>
+                        </div>
+                        
+                        <!-- Catégories de produits -->
+                        <div class="categories-container" id="categoriesContainer">
+                            <div class="categories-title">Choisissez votre catégorie de produits</div>
+                            <div class="categories-grid" id="categoriesGrid">
+                                <!-- Les catégories seront générées dynamiquement -->
+                            </div>
+                            <div class="selected-category">
+                                <div class="categories-title">Catégorie sélectionnée</div>
+                                <div id="selectedCategory">
+                                    <!-- La catégorie sélectionnée apparaîtra ici -->
+                                </div>
+                            </div>
+                            <span class="error-message" id="categoryError"></span>
+                        </div>
+
+                        <!-- Méthodes de paiement -->
+                        <div class="payment-container" id="paymentContainer">
+                            <div class="payment-title">Méthodes de paiement acceptées</div>
+                            <div class="payment-grid" id="paymentGrid">
+                                <!-- Les méthodes de paiement seront générées dynamiquement -->
+                            </div>
+                            <div class="selected-payments">
+                                <div class="payment-title">Méthodes sélectionnées</div>
+                                <div class="selected-payments-tags" id="selectedPayments">
+                                    <!-- Les méthodes sélectionnées apparaîtront ici -->
+                                </div>
+                            </div>
+                            <span class="error-message" id="paymentsError"></span>
+                        </div>
+                    </div>
+
+                    <!-- Mot de passe (toujours visible) -->
+                    <div class="password-container">
+                        <div class="password-title">Sécurité du compte</div>
+                        <div class="input-group">
+                            <label for="registerPassword">Mot de passe</label>
+                            <input type="password" id="registerPassword" required>
+                            <span class="error-message" id="registerPasswordError"></span>
+                            <div class="password-strength" id="passwordStrength"></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="registerConfirmPassword">Confirmer le mot de passe</label>
+                            <input type="password" id="registerConfirmPassword" required>
+                            <span class="error-message" id="registerConfirmPasswordError"></span>
+                        </div>
+                    </div>
+
+                    <!-- Conditions (toujours visible) -->
+                    <div class="terms-container">
+                        <div class="terms-title">Conditions d'utilisation</div>
+                        <div class="terms">
+                            <label>
+                                <input type="checkbox" id="acceptTerms" required>
+                                J'accepte les <a href="#">conditions d'utilisation</a>
+                            </label>
+                            <span class="error-message" id="termsError"></span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">S'inscrire</button>
+                </form>
+                <p class="switch-form">
+                    Déjà un compte ? <a href="#" id="showLogin">Se connecter</a>
+                </p>
             </div>
-            <div class="nav-item" id="nav-restaurant">
-                <i class="fa-solid fa-utensils"></i>
-                <span>Restaurant</span>
-            </div>
-            <div class="nav-item active" id="nav-hotel">
-                <i class="fa-solid fa-square-h"></i>
-                <span>Hôtel</span>
-            </div>
-            <div class="nav-item" id="nav-boutique">
-                <i class="fa-solid fa-store"></i>
-                <span>Boutique</span>
-            </div>
-            <div class="nav-item" id="nav-profil">
-                <i class="fa-solid fa-user"></i>
-                <span>Profil</span>
+
+            <!-- Dashboard après connexion -->
+            <div class="dashboard hidden" id="dashboard">
+                <h3 id="dashboardTitle">Bienvenue !</h3>
+                <div class="dashboard-content">
+                    <div class="user-info">
+                        <p><strong>Email:</strong> <span id="userEmail"></span></p>
+                        <p><strong>Type de compte:</strong> <span id="userAccountType"></span></p>
+                        <p><strong>Nom:</strong> <span id="userName"></span></p>
+                        <div id="sellerInfo" class="hidden">
+                            <p><strong>Boutique:</strong> <span id="userStoreName"></span></p>
+                            <p><strong>Téléphone:</strong> <span id="userPhone"></span></p>
+                            <p><strong>Catégorie:</strong> <span id="userCategory"></span></p>
+                            <p><strong>Paiements acceptés:</strong> <span id="userPayments"></span></p>
+                        </div>
+                        <div id="buyerInfo" class="hidden">
+                            <div class="buyer-limitation">
+                                <strong>Compte Acheteur</strong> - Vous ne pouvez que consulter les produits et contacter les vendeurs
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-actions">
+                    <button class="btn-secondary" onclick="showDashboardActions()">Actions</button>
+                    <button class="btn-secondary" onclick="logout()">Déconnexion</button>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- Header -->
-    <div class="container-categorie">
-        <h2>EMA-Services</h2>
-        <div class="point">
-            <i class="fa-solid fa-clock-rotate-left"></i>
-        </div>
-        <div class="point">
-            <i class="fa-solid fa-basket-shopping"></i>
-        </div>
-    </div>
-
-    <!-- Image Pub -->
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaG1yeDBoMnBqOXAzMnBmNzRxaTRpODhyb2JwdzRmNXphdXdlNTlxYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/76aSW7mZfEcGpYqmWb/giphy.gif"
-     class="pub" alt="pub">
-    
-    <!-- Section Hôtel -->
-    <section class="section active" id="section-hotel">
-        <div class="container">
-            <div class="mini-container">
-                <img src="Hotel.jpg" class="img" alt="Chambre de luxe">
-                <p>EMA Hotel</p>
-                <div class="icone-h">
-                    <i class="fa-solid fa-utensils"></i>
-                    <i class="fa-solid fa-person-swimming"></i>
-                    <i class="fa-solid fa-square-parking"></i>
-                    <i class="fa-solid fa-wifi"></i>
-                </div>
-                <button class="button">Reserver</button>
-            </div>
-            <div class="mini-container">
-                <img src="Hotel.jpg" class="img" alt="Chambre standard">
-                <p>Christella Hotel</p>
-                <div class="icone-h">
-                    <i class="fa-solid fa-utensils"></i>
-                    <i class="fa-solid fa-wifi"></i>
-                </div>
-                <button class="button">Reserver</button>
-            </div>
-            <div class="mini-container">
-                <img src="Hotel.jpg" class="img" alt="Suite présidentielle">
-                <p>Radison Hotel</p>
-                <div class="icone-h">
-                    <i class="fa-solid fa-utensils"></i>
-                    <i class="fa-solid fa-person-swimming"></i>
-                    <i class="fa-solid fa-square-parking"></i>
-                    <i class="fa-solid fa-wifi"></i>
-                    <i class="fa-solid fa-tv"></i>
-                </div>
-                <button class="button">Reserver</button>
-            </div>
-            <div class="mini-container">
-                <img src="Hotel.jpg" class="img" alt="Chambre familiale">
-                <p>Atlantic Hotel</p>
-                <div class="icone-h">
-                    <i class="fa-solid fa-utensils"></i>
-                    <i class="fa-solid fa-person-swimming"></i>
-                    <i class="fa-solid fa-wifi"></i>
-                </div>
-                <button class="button">Reserver</button>
-            </div>
-            <div class="mini-container">
-                <img src="Hotel.jpg" class="img" alt="Chambre affaires">
-                <p>Palace Hotel</p>
-                <div class="icone-h">
-                    <i class="fa-solid fa-utensils"></i>
-                    <i class="fa-solid fa-wifi"></i>
-                    <i class="fa-solid fa-desktop"></i>
-                </div>
-                <button class="button">Reserver</button>
-            </div>
-            <div class="mini-container">
-                <img src="Hotel.jpg" class="img" alt="Chambre romantique">
-                <p>Chambre romantique</p>
-                <div class="icone-h">
-                    <i class="fa-solid fa-utensils"></i>
-                    <i class="fa-solid fa-wifi"></i>
-                    <i class="fa-solid fa-heart"></i>
-                </div>
-                <button class="button">Reserver</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Transport -->
-    <section class="section" id="section-transport">
-        <div class="container-contenu">
-            <div class="ajuste">
-                <h2 class="reserver">Reserver une course</h2>
-                <p class="message-destination">Entrez votre destination pour voir les prix.</p>
-                <div class="destination">
-                    <input type="text" class="destination-ou" name="ou" id="user-depart" placeholder="📍Ou etes vous?">
-                    <input type="text" class="destination-ou" name="la-place" id="user-arrivee" placeholder="📍Ou allez vous?">
-                    <button class="btn">Voir le cout</button>
-                </div>
-
-                <p class="message-destination">Choisissez une course</p>
-
-                <div class="choix-course">
-                    <div class="choix">
-                        <div class="type">
-                            <h4>Economie</h4>
-                            <p>500cfa</p>
-                        </div>
-                        <div class="icone">
-                            <i class="fa-solid fa-taxi"></i>
-                        </div>
-                    </div>
-                    <div class="choix">
-                        <div class="type">
-                            <h4>Confort</h4>
-                            <p>750cfa</p>
-                        </div>
-                        <div class="icone">
-                            <i class="fa-solid fa-car"></i>
-                        </div>
-                    </div>
-                    <div class="choix">
-                        <div class="type">
-                            <h4>Ultime</h4>
-                            <p>1000cfa</p>
-                        </div>
-                        <div class="icone">
-                            <i class="fa-solid fa-car-side"></i>
-                        </div>
-                    </div>
-                    <div class="choix">
-                        <div class="type">
-                            <h4>Moto</h4>
-                            <p>300cfa</p>
-                        </div>
-                        <div class="icone">
-                            <i class="fa-solid fa-motorcycle"></i>
-                        </div>
-                    </div>
-                    <div class="payer">
-                        <p class="paiement">Mode de paiement</p>
-                        <span><i class="fa-solid fa-credit-card"></i>Visa ****4242</span>
-                        <p class="changer">Changer</p>
-                    </div>
-                    <input type="text" class="montant-precis" placeholder="💰Montant a payer">
-                    <button class="btn">Commander →</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Livraison -->
-    <section class="section" id="section-livraison">
-        <div class="section-placeholder">
-            <h2>Service de Livraison</h2>
-            <p>Bientôt disponible</p>
-            <i class="fa-solid fa-truck" style="font-size: 48px; color: #0088cc; margin: 20px 0;"></i>
-            <p>Livraison rapide et sécurisée dans toute la ville</p>
-        </div>
-    </section>
-
-    <!-- Section Restaurant -->
-    <section class="section" id="section-restaurant">
-        <div class="section-placeholder">
-            <h2>Restaurants Partenaires</h2>
-            <p>Bientôt disponible</p>
-            <i class="fa-solid fa-utensils" style="font-size: 48px; color: #0088cc; margin: 20px 0;"></i>
-            <p>Découvrez les meilleurs restaurants de la ville</p>
-        </div>
-    </section>
-
-    <!-- Section Boutique -->
-    <section class="section" id="section-boutique">
-        <div class="container">
-
-            <a href="electronique.html">
-            <div class="mini-container">
-                <img src="https://turbologo.com/articles/wp-content/uploads/2019/08/other-phone-logos.jpg"
-                 class="img" alt="Suite présidentielle">
-            </div></a>
-
-            <a href="habits.html">
-            <div class="mini-container">
-                <img src="data:image/png;base64,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" 
-                class="img" alt="Chambre de luxe">
-            </div></a>
-
-            <a href="Cosmétique.html">
-            <div class="mini-container">
-                <img src="https://thumbs.dreamstime.com/z/logo-%C3%A9l%C3%A9gant-de-vecteur-de-qualit%C3%A9-de-boutique-professionnelle-de-cosm%C3%A9tiques-66433429.jpg"
-                 class="img" alt="Chambre standard">
-            </div></a>
-
-            <a href="manicure.html">
-            <div class="mini-container">
-                <img src="data:image/jpeg;base64,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" 
-                class="img" alt="Chambre affaires">
-            </div>
-            </a>
-
-            <a href="meuble.html">
-            <div class="mini-container">
-                <img src="https://img.freepik.com/vecteurs-premium/conception-modele-logo-meubles_23-2148633672.jpg" 
-                class="img" alt="Chambre familiale">
-            </div>
-            </a>
-
-            <a href="quincaillerie.html">
-            <div class="mini-container">
-                <img src="https://c8.alamy.com/compfr/2c23f6t/magasin-de-materiel-magasin-d-amelioration-de-la-maison-ou-jeu-d-icones-de-bricolage-outils-a-main-baignoire-rouleau-symboles-vectoriels-noirs-de-marteau-2c23f6t.jpg" 
-                class="img" alt="Chambre affaires">
-            </div>
-            </a>
-
-            <a href="automobile.html">
-            <div class="mini-container">
-                <img src="https://photos.auto-moto.com/32/2020/07/photo_article/2765/22491/1200-L-logo-voiture-que-signifient-ces-symboles-automobiles.webp" 
-                class="img" alt="Chambre affaires">
-            </div>
-            </a>
-
-        </div>
-    </section>
-
-    <!-- Section Profil -->
-    <section class="section" id="section-profil">
-        <div class="section-placeholder">
-            <h2>Mon Profil</h2>
-            <p>Bientôt disponible</p>
-            <i class="fa-solid fa-user" style="font-size: 48px; color: #0088cc; margin: 20px 0;"></i>
-            <p>Gérez vos réservations et préférences</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <!-- <footer>
-        <h1>Nos contacts</h1>
-        <p style="color: #eee; margin-top: 10px;">Email: contact@ema.com | Tél: +241 XX XX XX XX</p>
-        <p style="color: #eee; margin-top: 5px;">© 2024 EMA Services. Tous droits réservés.</p>
-    </footer> -->
-
-    <script src="index.js"></script>
 </body>
+
+<script src="index.js"></script>
 </html>
