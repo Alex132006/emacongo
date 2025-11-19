@@ -20,13 +20,12 @@
             padding: 20px;
         }
 
-        .auth-container {
-            background: #d3e1d1;
+        .auth-container {            background: #d3e1d1;
             border-radius: 60px;
             border: 1px solid #43a638;
-            box-shadow: 0 15px 35px rgb(0, 0, 0);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.259);
             padding: 40px;
-            position: relative;
+            position: relative;width: 100%;
             overflow: hidden;
         }
 
@@ -60,7 +59,7 @@
             text-align: center;
             position: relative;
             top: 25px;
-            margin-bottom: 2px;
+            margin-bottom: 40px;
             cursor:text;
         }
 
