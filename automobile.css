@@ -55,9 +55,18 @@ body {
     cursor: pointer;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1;
+    position: fixed;
+    top: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.fa-arrow-left:hover {
+    background: #ffffff;
+    color: #ffffff;
 }
 
 
