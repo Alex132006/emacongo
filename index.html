@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head> 
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription & Connexion</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="shortcut icon" href="alex.css">
     <link rel="icon" href="alex.jpg" type="image/x-icon">
-    <link rel="icon" href="alex.jpg" type="image/png" sizes="any">
-    <link rel="apple-touch-icon" href="alex.jpg" sizes="180x180">
+    <link rel="apple-touch-icon" href="alex.jpg">
     <link rel="manifest" href="/manifest.json">
 </head>
 
@@ -20,31 +19,34 @@
                 <h2>Connexion</h2>
                 <form id="loginForm">
                     <!-- Sélection du type de connexion -->
-                    <div class="user-type-selection">
-                        <div class="user-type-option" data-type="buyer">
-                            <div class="user-type-icon">👤</div>
-                            <div class="user-type-label">Acheteur</div>
-                        </div>
-                        <div class="user-type-option" data-type="seller">
-                            <div class="user-type-icon">🏪</div>
-                            <div class="user-type-label">Vendeur</div>
+                    <div class="user-type-container">
+                        <div class="user-type-title">Type de compte</div>
+                        <div class="user-type-selection">
+                            <div class="user-type-option" data-type="buyer">
+                                <div class="user-type-icon">👤</div>
+                                <div class="user-type-label">Acheteur</div>
+                            </div>
+                            <div class="user-type-option" data-type="seller">
+                                <div class="user-type-icon">🏪</div>
+                                <div class="user-type-label">Vendeur</div>
+                            </div>
                         </div>
                     </div>
                     <input type="hidden" id="loginUserType" name="loginUserType" value="buyer" required>
                     <span class="error-message" id="loginUserTypeError"></span>
 
                     <div class="input-group">
-                        <label for="loginEmail"></label>
-                        <input type="email" id="loginEmail" required>
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" placeholder="Votre email" required>
                         <span class="error-message" id="loginEmailError"></span>
                     </div>
                     <div class="input-group">
-                        <label for="loginPassword"></label>
-                        <input type="password" id="loginPassword" required>
+                        <label for="loginPassword">Mot de passe</label>
+                        <input type="password" id="loginPassword" placeholder="Votre mot de passe" required>
                         <span class="error-message" id="loginPasswordError"></span>
                     </div>
                     <div class="options">
-                        <label>
+                        <label class="remember">
                             <input type="checkbox" id="rememberMe">
                             Se souvenir de moi
                         </label>
@@ -62,14 +64,17 @@
                 <h2>Inscription</h2>
                 <form id="registerForm">
                     <!-- Sélection du type d'utilisateur -->
-                    <div class="user-type-selection">
-                        <div class="user-type-option" data-type="buyer">
-                            <div class="user-type-icon">👤</div>
-                            <div class="user-type-label">Acheteur</div>
-                        </div>
-                        <div class="user-type-option" data-type="seller">
-                            <div class="user-type-icon">🏪</div>
-                            <div class="user-type-label">Vendeur</div>
+                    <div class="user-type-container">
+                        <div class="user-type-title">Type de compte</div>
+                        <div class="user-type-selection">
+                            <div class="user-type-option selected" data-type="buyer">
+                                <div class="user-type-icon">👤</div>
+                                <div class="user-type-label">Acheteur</div>
+                            </div>
+                            <div class="user-type-option" data-type="seller">
+                                <div class="user-type-icon">🏪</div>
+                                <div class="user-type-label">Vendeur</div>
+                            </div>
                         </div>
                     </div>
                     <input type="hidden" id="userType" name="userType" value="buyer" required>
@@ -85,12 +90,12 @@
                         <div class="basic-info-title">Informations personnelles</div>
                         <div class="input-group">
                             <label for="registerName">Nom complet</label>
-                            <input type="text" id="registerName" required>
+                            <input type="text" id="registerName" placeholder="Votre nom complet" required>
                             <span class="error-message" id="registerNameError"></span>
                         </div>
                         <div class="input-group">
                             <label for="registerEmail">Email</label>
-                            <input type="email" id="registerEmail" required>
+                            <input type="email" id="registerEmail" placeholder="Votre email" required>
                             <span class="error-message" id="registerEmailError"></span>
                         </div>
                     </div>
@@ -100,20 +105,20 @@
                         <div class="seller-title">Informations de la boutique</div>
                         <div class="input-group">
                             <label for="storeName">Nom de la boutique</label>
-                            <input type="text" id="storeName">
+                            <input type="text" id="storeName" placeholder="Nom de votre boutique">
                             <span class="error-message" id="storeNameError"></span>
                         </div>
                         <div class="input-group">
                             <label for="phone">Téléphone</label>
-                            <input type="tel" id="phone">
+                            <input type="tel" id="phone" placeholder="Votre numéro de téléphone">
                             <span class="error-message" id="phoneError"></span>
                         </div>
                         <div class="input-group">
                             <label for="address">Adresse</label>
-                            <input type="text" id="address">
+                            <input type="text" id="address" placeholder="Adresse de votre boutique">
                             <span class="error-message" id="addressError"></span>
                         </div>
-                        
+
                         <!-- Catégories de produits -->
                         <div class="categories-container" id="categoriesContainer">
                             <div class="categories-title">Choisissez votre catégorie de produits</div>
@@ -123,7 +128,10 @@
                             <div class="selected-category">
                                 <div class="categories-title">Catégorie sélectionnée</div>
                                 <div id="selectedCategory">
-                                    <!-- La catégorie sélectionnée apparaîtra ici -->
+                                    <span class="selected-category-tag" style="display: none;">
+                                        <span class="category-icon">📦</span>
+                                        <span class="category-name">Aucune catégorie sélectionnée</span>
+                                    </span>
                                 </div>
                             </div>
                             <span class="error-message" id="categoryError"></span>
@@ -139,6 +147,11 @@
                                 <div class="payment-title">Méthodes sélectionnées</div>
                                 <div class="selected-payments-tags" id="selectedPayments">
                                     <!-- Les méthodes sélectionnées apparaîtront ici -->
+                                    <span class="payment-tag" style="display: none;">
+                                        <span class="payment-icon">💳</span>
+                                        <span class="payment-name">Aucune méthode sélectionnée</span>
+                                        <button class="remove-payment" type="button">×</button>
+                                    </span>
                                 </div>
                             </div>
                             <span class="error-message" id="paymentsError"></span>
@@ -150,13 +163,14 @@
                         <div class="password-title">Sécurité du compte</div>
                         <div class="input-group">
                             <label for="registerPassword">Mot de passe</label>
-                            <input type="password" id="registerPassword" required>
+                            <input type="password" id="registerPassword" placeholder="Créez un mot de passe" required>
                             <span class="error-message" id="registerPasswordError"></span>
                             <div class="password-strength" id="passwordStrength"></div>
                         </div>
                         <div class="input-group">
                             <label for="registerConfirmPassword">Confirmer le mot de passe</label>
-                            <input type="password" id="registerConfirmPassword" required>
+                            <input type="password" id="registerConfirmPassword"
+                                placeholder="Confirmez votre mot de passe" required>
                             <span class="error-message" id="registerConfirmPasswordError"></span>
                         </div>
                     </div>
@@ -167,13 +181,14 @@
                         <div class="terms">
                             <label>
                                 <input type="checkbox" id="acceptTerms" required>
-                                J'accepte les <a href="#">conditions d'utilisation</a>
+                                J'accepte les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de
+                                    confidentialité</a>
                             </label>
                             <span class="error-message" id="termsError"></span>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn-primary">S'inscrire</button>
+                    <button type="submit" class="btn-primary">Créer mon compte</button>
                 </form>
                 <p class="switch-form">
                     Déjà un compte ? <a href="#" id="showLogin">Se connecter</a>
@@ -185,30 +200,33 @@
                 <h3 id="dashboardTitle">Bienvenue !</h3>
                 <div class="dashboard-content">
                     <div class="user-info">
-                        <p><strong>Email:</strong> <span id="userEmail"></span></p>
-                        <p><strong>Type de compte:</strong> <span id="userAccountType"></span></p>
-                        <p><strong>Nom:</strong> <span id="userName"></span></p>
+                        <p><strong>Email:</strong> <span id="userEmail">-</span></p>
+                        <p><strong>Type de compte:</strong> <span id="userAccountType">-</span></p>
+                        <p><strong>Nom:</strong> <span id="userName">-</span></p>
                         <div id="sellerInfo" class="hidden">
-                            <p><strong>Boutique:</strong> <span id="userStoreName"></span></p>
-                            <p><strong>Téléphone:</strong> <span id="userPhone"></span></p>
-                            <p><strong>Catégorie:</strong> <span id="userCategory"></span></p>
-                            <p><strong>Paiements acceptés:</strong> <span id="userPayments"></span></p>
+                            <p><strong>Boutique:</strong> <span id="userStoreName">-</span></p>
+                            <p><strong>Téléphone:</strong> <span id="userPhone">-</span></p>
+                            <p><strong>Adresse:</strong> <span id="userAddress">-</span></p>
+                            <p><strong>Catégorie:</strong> <span id="userCategory">-</span></p>
+                            <p><strong>Paiements acceptés:</strong> <span id="userPayments">-</span></p>
                         </div>
                         <div id="buyerInfo" class="hidden">
                             <div class="buyer-limitation">
-                                <strong>Compte Acheteur</strong> - Vous ne pouvez que consulter les produits et contacter les vendeurs
+                                <strong>Compte Acheteur</strong> - Vous ne pouvez que consulter les produits et
+                                contacter les vendeurs
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="dashboard-actions">
-                    <button class="btn-secondary" onclick="showDashboardActions()">Actions</button>
-                    <button class="btn-secondary" onclick="logout()">Déconnexion</button>
+                    <button class="btn-secondary" id="dashboardActionsBtn">Actions</button>
+                    <button class="btn-secondary" id="logoutBtn">Déconnexion</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="index.js"></script>
 </body>
 
 </html>
