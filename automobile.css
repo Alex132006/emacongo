@@ -66,7 +66,6 @@ body {
 
 .fa-arrow-left:hover {
     background: #ffffff;
-    color: #ffffff;
 }
 
 
@@ -220,11 +219,6 @@ body {
     font-size: 14px;
 }
 
-
-
-
-
-
 /* RESPONSIVE */
 @media (min-width: 768px) {
     .container {
@@ -246,7 +240,7 @@ body {
 
 @media (min-width: 1024px) {
     .container {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         gap: 25px;
         padding: 20px 40px;
         max-width: 1400px;
