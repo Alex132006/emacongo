@@ -425,126 +425,126 @@
         }
 
         // Charger le contenu du profil
-        function loadProfileContent() {
-            const authContainer = document.querySelector('#section-profil .auth-container');
-            authContainer.innerHTML = `
-                <!-- Formulaire de Connexion -->
-                <div class="form-container login-form" id="loginFormContainer">
-                    <h2>Connexion</h2>
-                    <form id="loginForm">
-                        <!-- Sélection du type de connexion -->
-                        <div class="user-type-container">
-                            <div class="user-type-title">Type de compte</div>
-                            <div class="user-type-selection">
-                                <div class="user-type-option selected" data-type="buyer">
-                                    <div class="user-type-icon">👤</div>
-                                    <div class="user-type-label">Acheteur</div>
-                                </div>
-                                <div class="user-type-option" data-type="seller">
-                                    <div class="user-type-icon">🏪</div>
-                                    <div class="user-type-label">Vendeur</div>
-                                </div>
-                            </div>
-                        </div>
-                        <input type="hidden" id="loginUserType" name="loginUserType" value="buyer" required>
-                        <span class="error-message" id="loginUserTypeError"></span>
+        // function loadProfileContent() {
+        //     const authContainer = document.querySelector('#section-profil .auth-container');
+        //     authContainer.innerHTML = `
+        //         <!-- Formulaire de Connexion -->
+        //         <div class="form-container login-form" id="loginFormContainer">
+        //             <h2>Connexion</h2>
+        //             <form id="loginForm">
+        //                 <!-- Sélection du type de connexion -->
+        //                 <div class="user-type-container">
+        //                     <div class="user-type-title">Type de compte</div>
+        //                     <div class="user-type-selection">
+        //                         <div class="user-type-option selected" data-type="buyer">
+        //                             <div class="user-type-icon">👤</div>
+        //                             <div class="user-type-label">Acheteur</div>
+        //                         </div>
+        //                         <div class="user-type-option" data-type="seller">
+        //                             <div class="user-type-icon">🏪</div>
+        //                             <div class="user-type-label">Vendeur</div>
+        //                         </div>
+        //                     </div>
+        //                 </div>
+        //                 <input type="hidden" id="loginUserType" name="loginUserType" value="buyer" required>
+        //                 <span class="error-message" id="loginUserTypeError"></span>
 
-                        <div class="input-group">
-                            <label for="loginEmail">Email</label>
-                            <input type="email" id="loginEmail" placeholder="Votre email" required>
-                            <span class="error-message" id="loginEmailError"></span>
-                        </div>
-                        <div class="input-group">
-                            <label for="loginPassword">Mot de passe</label>
-                            <input type="password" id="loginPassword" placeholder="Votre mot de passe" required>
-                            <span class="error-message" id="loginPasswordError"></span>
-                        </div>
-                        <div class="options">
-                            <label class="remember">
-                                <input type="checkbox" id="rememberMe">
-                                Se souvenir de moi
-                            </label>
-                            <a href="#" class="forgot-password">Mot de passe oublié ?</a>
-                        </div>
-                        <button type="submit" class="btn-primary">Se connecter</button>
-                    </form>
-                    <p class="switch-form">
-                        Pas de compte ? <a href="#" id="showRegister">S'inscrire</a>
-                    </p>
-                </div>
+        //                 <div class="input-group">
+        //                     <label for="loginEmail">Email</label>
+        //                     <input type="email" id="loginEmail" placeholder="Votre email" required>
+        //                     <span class="error-message" id="loginEmailError"></span>
+        //                 </div>
+        //                 <div class="input-group">
+        //                     <label for="loginPassword">Mot de passe</label>
+        //                     <input type="password" id="loginPassword" placeholder="Votre mot de passe" required>
+        //                     <span class="error-message" id="loginPasswordError"></span>
+        //                 </div>
+        //                 <div class="options">
+        //                     <label class="remember">
+        //                         <input type="checkbox" id="rememberMe">
+        //                         Se souvenir de moi
+        //                     </label>
+        //                     <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+        //                 </div>
+        //                 <button type="submit" class="btn-primary">Se connecter</button>
+        //             </form>
+        //             <p class="switch-form">
+        //                 Pas de compte ? <a href="#" id="showRegister">S'inscrire</a>
+        //             </p>
+        //         </div>
 
-                <!-- Formulaire d'Inscription -->
-                <div class="form-container register-form hidden" id="registerFormContainer">
-                    <h2>Inscription</h2>
-                    <form id="registerForm">
-                        <!-- Sélection du type d'utilisateur -->
-                        <div class="user-type-container">
-                            <div class="user-type-title">Type de compte</div>
-                            <div class="user-type-selection">
-                                <div class="user-type-option selected" data-type="buyer">
-                                    <div class="user-type-icon">👤</div>
-                                    <div class="user-type-label">Acheteur</div>
-                                </div>
-                                <div class="user-type-option" data-type="seller">
-                                    <div class="user-type-icon">🏪</div>
-                                    <div class="user-type-label">Vendeur</div>
-                                </div>
-                            </div>
-                        </div>
-                        <input type="hidden" id="userType" name="userType" value="buyer" required>
-                        <span class="error-message" id="userTypeError"></span>
+        //         <!-- Formulaire d'Inscription -->
+        //         <div class="form-container register-form hidden" id="registerFormContainer">
+        //             <h2>Inscription</h2>
+        //             <form id="registerForm">
+        //                 <!-- Sélection du type d'utilisateur -->
+        //                 <div class="user-type-container">
+        //                     <div class="user-type-title">Type de compte</div>
+        //                     <div class="user-type-selection">
+        //                         <div class="user-type-option selected" data-type="buyer">
+        //                             <div class="user-type-icon">👤</div>
+        //                             <div class="user-type-label">Acheteur</div>
+        //                         </div>
+        //                         <div class="user-type-option" data-type="seller">
+        //                             <div class="user-type-icon">🏪</div>
+        //                             <div class="user-type-label">Vendeur</div>
+        //                         </div>
+        //                     </div>
+        //                 </div>
+        //                 <input type="hidden" id="userType" name="userType" value="buyer" required>
+        //                 <span class="error-message" id="userTypeError"></span>
 
-                        <!-- Informations de base -->
-                        <div class="basic-info-container">
-                            <div class="basic-info-title">Informations personnelles</div>
-                            <div class="input-group">
-                                <label for="registerName">Nom complet</label>
-                                <input type="text" id="registerName" placeholder="Votre nom complet" required>
-                                <span class="error-message" id="registerNameError"></span>
-                            </div>
-                            <div class="input-group">
-                                <label for="registerEmail">Email</label>
-                                <input type="email" id="registerEmail" placeholder="Votre email" required>
-                                <span class="error-message" id="registerEmailError"></span>
-                            </div>
-                        </div>
+        //                 <!-- Informations de base -->
+        //                 <div class="basic-info-container">
+        //                     <div class="basic-info-title">Informations personnelles</div>
+        //                     <div class="input-group">
+        //                         <label for="registerName">Nom complet</label>
+        //                         <input type="text" id="registerName" placeholder="Votre nom complet" required>
+        //                         <span class="error-message" id="registerNameError"></span>
+        //                     </div>
+        //                     <div class="input-group">
+        //                         <label for="registerEmail">Email</label>
+        //                         <input type="email" id="registerEmail" placeholder="Votre email" required>
+        //                         <span class="error-message" id="registerEmailError"></span>
+        //                     </div>
+        //                 </div>
 
-                        <!-- Mot de passe -->
-                        <div class="password-container">
-                            <div class="password-title">Sécurité du compte</div>
-                            <div class="input-group">
-                                <label for="registerPassword">Mot de passe</label>
-                                <input type="password" id="registerPassword" placeholder="Créez un mot de passe" required>
-                                <span class="error-message" id="registerPasswordError"></span>
-                                <div class="password-strength" id="passwordStrength"></div>
-                            </div>
-                            <div class="input-group">
-                                <label for="registerConfirmPassword">Confirmer le mot de passe</label>
-                                <input type="password" id="registerConfirmPassword" placeholder="Confirmez votre mot de passe" required>
-                                <span class="error-message" id="registerConfirmPasswordError"></span>
-                            </div>
-                        </div>
+        //                 <!-- Mot de passe -->
+        //                 <div class="password-container">
+        //                     <div class="password-title">Sécurité du compte</div>
+        //                     <div class="input-group">
+        //                         <label for="registerPassword">Mot de passe</label>
+        //                         <input type="password" id="registerPassword" placeholder="Créez un mot de passe" required>
+        //                         <span class="error-message" id="registerPasswordError"></span>
+        //                         <div class="password-strength" id="passwordStrength"></div>
+        //                     </div>
+        //                     <div class="input-group">
+        //                         <label for="registerConfirmPassword">Confirmer le mot de passe</label>
+        //                         <input type="password" id="registerConfirmPassword" placeholder="Confirmez votre mot de passe" required>
+        //                         <span class="error-message" id="registerConfirmPasswordError"></span>
+        //                     </div>
+        //                 </div>
 
-                        <!-- Conditions -->
-                        <div class="terms-container">
-                            <div class="terms-title">Conditions d'utilisation</div>
-                            <div class="terms">
-                                <label>
-                                    <input type="checkbox" id="acceptTerms" required>
-                                    J'accepte les conditions d'utilisation et la politique de confidentialité
-                                </label>
-                                <span class="error-message" id="termsError"></span>
-                            </div>
-                        </div>
+        //                 <!-- Conditions -->
+        //                 <div class="terms-container">
+        //                     <div class="terms-title">Conditions d'utilisation</div>
+        //                     <div class="terms">
+        //                         <label>
+        //                             <input type="checkbox" id="acceptTerms" required>
+        //                             J'accepte les conditions d'utilisation et la politique de confidentialité
+        //                         </label>
+        //                         <span class="error-message" id="termsError"></span>
+        //                     </div>
+        //                 </div>
 
-                        <button type="submit" class="btn-primary">Créer mon compte</button>
-                    </form>
-                    <p class="switch-form">
-                        Déjà un compte ? <a href="#" id="showLogin">Se connecter</a>
-                    </p>
-                </div>
-            `;
-        }
+        //                 <button type="submit" class="btn-primary">Créer mon compte</button>
+        //             </form>
+        //             <p class="switch-form">
+        //                 Déjà un compte ? <a href="#" id="showLogin">Se connecter</a>
+        //             </p>
+        //         </div>
+        //     `;
+        // }
 
         // Initialisation de l'application
         document.addEventListener('DOMContentLoaded', function () {
