@@ -68,6 +68,9 @@ body {
     background: #ffffff;
 }
 
+.section-active {
+    padding-top: 50px;
+}
 
 /* STYLE Cosmetique */
 .container {
