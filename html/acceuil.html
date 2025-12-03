@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMA - Services Marketplace</title>
+    <meta name="description"
+        content="Plateforme de services tout-en-un : Transport, Livraison, Restaurants, Hôtels, Boutiques">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/acceuil.css">
+    <!-- Favicon -->
+    <link rel="icon" href="alex.jpg" type="image/x-icon">
+    <link rel="apple-touch-icon" href="alex.jpg">
+    <link rel="manifest" href="../manifest.json">
+</head>
+
+<body>
+    <!-- Indicateur de chargement -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Chargement...</p>
+    </div>
+
+    <!-- Header -->
+    <div class="container-categorie">
+        <h2><i class="fas fa-store-alt"></i> EMA-Services</h2>
+        <div class=".container-cate" title="Historique">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <a href="../html/connect.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </div>
+
+    <!-- Image Pub -->
+    <div class="pub-container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaG1yeDBoMnBqOXAzMnBmNzRxaTRpODhyb2JwdzRmNXphdXdlNTlxYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/76aSW7mZfEcGpYqmWb/giphy.gif"
+            class="pub" alt="Publicité EMA Services">
+    </div>
+
+    <!-- Section Hôtel -->
+    <section class="section active" id="section-hotel">
+        <div class="container" id="hotels-container">
+            <!-- Les hôtels seront chargés dynamiquement -->
+        </div>
+    </section>
+
+    <!-- Section Transport -->
+    <section class="section" id="section-transport">
+        <div class="container-contenu">
+            <div class="ajuste">
+                <h2 class="reserver"><i class="fas fa-taxi"></i> Réserver une course</h2>
+                <p class="message-destination">Entrez votre destination pour voir les prix.</p>
+                <div class="destination">
+                    <input type="text" class="destination-ou" id="user-depart" placeholder="📍 Où êtes-vous?" required>
+                    <input type="text" class="destination-ou" id="user-arrivee" placeholder="📍 Où allez-vous?"
+                        required>
+                    <button class="btn" id="calculate-price">Voir le coût</button>
+                </div>
+
+                <div id="price-result" style="display: none;">
+                    <p class="message-destination">Choisissez une course</p>
+                    <div class="choix-course" id="ride-options">
+                        <!-- Les options seront générées dynamiquement -->
+                    </div>
+                </div>
+
+                <div id="payment-section" style="display: none;">
+                    <div class="payer">
+                        <p class="paiement"><i class="fas fa-credit-card"></i> Mode de paiement</p>
+                        <span id="selected-payment"><i class="fa-solid fa-credit-card"></i> Carte par défaut</span>
+                        <p class="changer" id="change-payment">Changer</p>
+                    </div>
+                    <input type="text" class="montant-precis" id="amount" placeholder="💰 Montant à payer" readonly>
+                    <button class="btn" id="confirm-order">Commander <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Livraison -->
+    <section class="section" id="section-livraison">
+        <div class="section-placeholder">
+            <h2><i class="fas fa-truck"></i> Service de Livraison</h2>
+            <p><i class="fas fa-clock"></i> Bientôt disponible</p>
+            <i class="fa-solid fa-truck" style="font-size: 48px; color: #0088cc; margin: 20px 0;"></i>
+            <p>Livraison rapide et sécurisée dans toute la ville</p>
+            <button class="btn" style="margin-top: 20px;" onclick="notifyComingSoon()">Être notifié</button>
+        </div>
+    </section>
+
+    <!-- Section Restaurant -->
+    <section class="section" id="section-restaurant">
+        <div class="section-placeholder">
+            <h2><i class="fas fa-utensils"></i> Restaurants Partenaires</h2>
+            <p><i class="fas fa-clock"></i> Bientôt disponible</p>
+            <i class="fa-solid fa-utensils" style="font-size: 48px; color: #0088cc; margin: 20px 0;"></i>
+            <p>Découvrez les meilleurs restaurants de la ville</p>
+            <button class="btn" style="margin-top: 20px;" onclick="notifyComingSoon()">Être notifié</button>
+        </div>
+    </section>
+
+    <!-- Section Boutique -->
+    <section class="section" id="section-boutique">
+        <div class="container" id="boutique-container">
+            <!-- Les catégories de boutique seront générées dynamiquement -->
+        </div>
+    </section>
+
+    <!-- Section Profil -->
+    <section class="section" id="section-profil">
+        <div class="sous-container">
+            <div class="auth-container">
+                <!-- Le contenu du profil sera injecté ici -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <div class="dan-container">
+        <div class="dan">
+            <div class="nav-item" id="nav-transport" data-section="transport">
+                <i class="fa-solid fa-taxi"></i>
+                <span>Transport</span>
+            </div>
+            <div class="nav-item" id="nav-livraison" data-section="livraison">
+                <i class="fa-solid fa-truck"></i>
+                <span>Livraison</span>
+            </div>
+            <div class="nav-item" id="nav-restaurant" data-section="restaurant">
+                <i class="fa-solid fa-utensils"></i>
+                <span>Restaurant</span>
+            </div>
+            <div class="nav-item active" id="nav-hotel" data-section="hotel">
+                <i class="fa-solid fa-square-h"></i>
+                <span>Hôtel</span>
+            </div>
+            <div class="nav-item" id="nav-boutique" data-section="boutique">
+                <i class="fa-solid fa-store"></i>
+                <span>Boutique</span>
+            </div>
+            <div class="nav-item" id="nav-profil" data-section="profil">
+                <i class="fa-solid fa-shopping-cart"></i>
+                <span>Panier</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pour notifications -->
+    <div id="notification-modal"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; justify-content: center; align-items: center;">
+        <div
+            style="background: white; padding: 30px; border-radius: 15px; max-width: 400px; width: 90%; text-align: center;">
+            <h3 style="color: #43a638; margin-bottom: 15px;">Notification</h3>
+            <p id="modal-message" style="margin-bottom: 20px;"></p>
+            <button class="btn" onclick="closeModal()">Fermer</button>
+        </div>
+    </div>
+
+    <script src="../js/acceuil.js"></script>
+</body>
+
+</html>
