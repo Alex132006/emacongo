@@ -8,7 +8,6 @@
     <meta name="description"
         content="Découvrez le Cadillac SUV 2025 Édition Prestige. Moteur V8 550ch, intérieur cuir Nappa, technologies avancées. Livraison gratuite, paiement sécurisé.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../css/automobile.css">
     <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../../images/favicon-16x16.png" type="image/png" sizes="16x16">
     <link rel="icon" href="../../images/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -92,11 +91,11 @@
             gap: 20px;
         }
 
-        .back-btn {
+        /* .back-btn {
             background: linear-gradient(135deg, var(--primary-green), var(--primary-dark));
             color: white;
             border: none;
-            padding: 12px 20px;
+            padding: 5px 10px;
             border-radius: 10px;
             cursor: pointer;
             font-size: 16px;
@@ -115,21 +114,21 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 113, 0, 0.3);
             outline: 2px solid var(--primary-light);
-        }
+        } */
 
-        .product-title {
-            font-size: 28px;
+        /* .product-title {
+            font-size: 20px;
             font-weight: 700;
             color: var(--text-dark);
             flex: 1;
             text-align: center;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
+        } */
 
         /* Product Content */
         .product-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            /* grid-template-columns: 1fr 1fr;je peux l'ouvrir pour un style avance */
             gap: 40px;
             margin-top: 20px;
         }
@@ -196,7 +195,7 @@
             background: linear-gradient(135deg, rgba(255, 248, 240, 0.9), rgba(255, 240, 230, 0.9));
             padding: 25px;
             border-radius: 12px;
-            border: 2px solid #ffe8cc;
+            border: 2px solid #5ca938;
             position: relative;
             overflow: hidden;
         }
@@ -215,9 +214,9 @@
         } */
 
         .current-price {
-            font-size: 32px;
+            font-size: 25px;
             font-weight: 800;
-            color: var(--accent-orange);
+            color: #ff0e0eb1;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -225,13 +224,13 @@
         }
 
         .old-price {
-            font-size: 22px;
-            color: var(--text-light);
+            font-size: 20px;
+            color: #858585;
             text-decoration: line-through;
             font-weight: 500;
         }
 
-        .discount-badge {
+        /* .discount-badge {
             background: var(--accent-red);
             color: white;
             padding: 4px 12px;
@@ -248,15 +247,16 @@
             display: inline-block;
             margin-top: 10px;
             border: 1px solid #ffc107;
-        }
+        } */
 
         /* Sections communes */
         .info-card {
-            padding: 25px;
+            padding: 10px;
             border-radius: 12px;
-            background: rgba(240, 248, 255, 0.9);
-            border: 2px solid #d1e7ff;
+            background: rgba(240, 248, 255, 0);
+            border: 2px solid #00000020;
             transition: var(--transition);
+            margin: 20px;
         }
 
         .info-card:hover {
@@ -264,7 +264,7 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .section-title {
+        /* .section-title {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 15px;
@@ -272,13 +272,22 @@
             align-items: center;
             gap: 10px;
             color: var(--text-dark);
+        } */
+
+        .shop-info {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .shop-name {
+            font-size: 18px;
+            font-weight: bold;
             color: #005eff;
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         /* Rating */
@@ -319,7 +328,7 @@
         }
 
         .feature-item i {
-            color: var(--primary-green);
+            color: rgb(12, 143, 0);
             font-size: 18px;
             width: 24px;
             text-align: center;
@@ -330,28 +339,28 @@
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            background: white;
+            background: rgb(255, 255, 255);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.084);
         }
 
         .specs-table tr:nth-child(even) {
-            background: #f9f9f9;
+            background: #dad9d961;
         }
 
         .specs-table td {
             padding: 12px 15px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #8f8f8f;
         }
 
         .specs-table td:first-child {
-            font-weight: 600;
-            color: var(--text-dark);
+            font-weight: bold;
+            color: #000000;
         }
 
         .specs-table td:last-child {
-            color: var(--text-medium);
+            color: #4e4e4e;
         }
 
         /* Action Buttons */
@@ -434,7 +443,7 @@
             background: white;
             border-radius: 8px;
             border: 2px solid transparent;
-            transition: var(--transition);
+            transition: #eee;
             text-decoration: none;
             color: var(--text-dark);
         }
@@ -443,7 +452,7 @@
         .contact-method:focus {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            border-color: #005eff;
+            border-color: #ffffff00;
             outline: none;
         }
 
@@ -481,115 +490,6 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* Reviews */
-        .reviews-section {
-            margin-top: 40px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid #e9ecef;
-        }
-
-        .review-item {
-            border-bottom: 2px solid #f0f0f0;
-            padding: 20px 0;
-            transition: background-color 0.3s ease;
-        }
-
-        .review-item:hover {
-            background-color: rgba(0, 113, 0, 0.05);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 0 -20px;
-        }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        /* Progress Bars */
-        .rating-summary {
-            display: flex;
-            gap: 30px;
-            margin: 20px 0;
-            align-items: center;
-        }
-
-        .rating-score {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .rating-bars {
-            flex: 1;
-        }
-
-        .rating-bar {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 5px 0;
-        }
-
-        .rating-bar span {
-            width: 50px;
-            font-size: 14px;
-            color: var(--text-light);
-        }
-
-        .bar-container {
-            flex: 1;
-            height: 8px;
-            background: #e0e0e0;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent-yellow), #ff9800);
-            border-radius: 4px;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes cartBounce {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        .btn-cart:active {
-            animation: cartBounce 0.3s ease;
-        }
-
-        .btn-wishlist:active {
-            animation: cartBounce 0.3s ease;
-        }
-
         /* Badges */
         .badges {
             display: flex;
@@ -615,15 +515,15 @@
         }
 
         .badge-blue {
-            background: rgba(0, 94, 255, 0.1);
-            color: #005eff;
-            border: 1px solid #005eff;
+            background: rgba(67, 166, 56, 0.1);
+            color: var(--primary-dark);
+            border: 1px solid var(--primary-light);
         }
 
         .badge-orange {
-            background: rgba(255, 193, 7, 0.1);
-            color: #c06600;
-            border: 1px solid #ffc107;
+            background: rgba(67, 166, 56, 0.1);
+            color: var(--primary-dark);
+            border: 1px solid var(--primary-light);
         }
 
         /* Stock Indicator */
@@ -633,7 +533,7 @@
 
         .stock-bar {
             height: 8px;
-            background: #e0e0e0;
+            background: #dad6d6;
             border-radius: 4px;
             overflow: hidden;
             margin: 10px 0;
@@ -679,15 +579,15 @@
             <a href="../automobile.html">Automobile</a> &gt;
             <span>Cadillac SUV 2025</span>
         </nav>
-
-        <div class="product-header">
+        
+        <!--<div class="product-header">
             <a href="../automobile.html" class="back-btn" aria-label="Retour à la liste des véhicules">
                 <i class="fa-solid fa-arrow-left"></i>
-                Retour aux véhicules
+                Retour
             </a>
-            <h1 class="product-title">Cadillac SUV 2025 - Édition Prestige</h1>
+            <h1 class="product-title">Cadillac SUV 2025</h1>
             <span class="sr-only">Fiche détaillée du produit</span>
-        </div>
+        </div> -->
 
         <div class="product-content">
             <!-- Image Gallery -->
@@ -729,6 +629,14 @@
                     </div>
                 </div>
 
+                <div class="shop-info">
+                    <div class="shop-name">
+                        <i class="fa-solid fa-certificate"></i>
+                        Ema's Shop
+                    </div>
+                    <p>Vendeur certifié avec garantie Apple officielle</p>
+                </div>
+
                 <!-- Badges -->
                 <div class="badges">
                     <span class="badge badge-green">
@@ -740,44 +648,6 @@
                     <span class="badge badge-orange">
                         <i class="fa-solid fa-shield-alt"></i> Paiement sécurisé
                     </span>
-                </div>
-
-                <!-- Rating -->
-                <!-- <div class="info-card rating-section">
-                    <div class="rating-summary">
-                        <div class="rating-score">4.5</div>
-                        <div class="rating-bars">
-                            <div class="rating-bar">
-                                <span>5★</span>
-                                <div class="bar-container">
-                                    <div class="bar-fill" style="width: 70%"></div>
-                                </div>
-                                <span>70%</span>
-                            </div>
-                            <div class="rating-bar">
-                                <span>4★</span>
-                                <div class="bar-container">
-                                    <div class="bar-fill" style="width: 20%"></div>
-                                </div>
-                                <span>20%</span>
-                            </div>
-                            <div class="rating-bar">
-                                <span>3★</span>
-                                <div class="bar-container">
-                                    <div class="bar-fill" style="width: 8%"></div>
-                                </div>
-                                <span>8%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="stars" aria-label="Note de 4.5 étoiles sur 5">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-alt"></i>
-                        <span>4.5/5 (734 avis)</span>
-                    </div>
                 </div>
 
                 <!-- Key Specifications -->
@@ -846,7 +716,7 @@
                             <span>Sièges massants</span>
                         </div>
                     </div>
-                </div> -->
+                </div>
 
                 <!-- Contact -->
                 <div class="info-card">
@@ -926,7 +796,7 @@
             </div>
         </div>
 
-        
+
     </div>
 </body>
 
