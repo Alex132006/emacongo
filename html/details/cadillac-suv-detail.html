@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadillac SUV 2025 Édition Prestige - Fiche Technique Détail | Ema's Shop</title>
+    <meta name="description"
+        content="Découvrez le Cadillac SUV 2025 Édition Prestige. Moteur V8 550ch, intérieur cuir Nappa, technologies avancées. Livraison gratuite, paiement sécurisé.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/automobile.css">
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../images/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="../../images/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+    <link rel="manifest" href="../../manifest.json">
+    <style>
+        :root {
+            --primary-green: #007100;
+            --primary-dark: #005a00;
+            --primary-light: #43a638;
+            --accent-orange: #c06600;
+            --accent-red: #ff4444;
+            --accent-yellow: #ffc107;
+            --text-dark: #222;
+            --text-medium: #444;
+            --text-light: #666;
+            --bg-light: #f5f7fa;
+            --bg-white: rgba(255, 255, 255, 0.95);
+            --shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            --border-radius: 20px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .detail-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 30px;
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .detail-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-green), var(--primary-light));
+        }
+
+        /* Header */
+        .product-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .back-btn {
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 113, 0, 0.2);
+        }
+
+        .back-btn:hover,
+        .back-btn:focus {
+            background: linear-gradient(135deg, var(--primary-dark), #004400);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 113, 0, 0.3);
+            outline: 2px solid var(--primary-light);
+        }
+
+        .product-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-dark);
+            flex: 1;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Product Content */
+        .product-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .product-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* Image Gallery */
+        .product-image-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .product-image-container:hover {
+            transform: scale(1.02);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+
+        .image-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .image-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid white;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .image-indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        /* Price Section */
+        .price-section {
+            background: linear-gradient(135deg, rgba(255, 248, 240, 0.9), rgba(255, 240, 230, 0.9));
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #ffe8cc;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* .price-section::before {
+            content: 'PROMO';
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background: var(--accent-red);
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 12px;
+            font-weight: bold;
+        } */
+
+        .current-price {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--accent-orange);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .old-price {
+            font-size: 22px;
+            color: var(--text-light);
+            text-decoration: line-through;
+            font-weight: 500;
+        }
+
+        .discount-badge {
+            background: var(--accent-red);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-left: 15px;
+        }
+
+        .price-per-month {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 10px;
+            border: 1px solid #ffc107;
+        }
+
+        /* Sections communes */
+        .info-card {
+            padding: 25px;
+            border-radius: 12px;
+            background: rgba(240, 248, 255, 0.9);
+            border: 2px solid #d1e7ff;
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-dark);
+        }
+
+        .shop-name {
+            color: #005eff;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* Rating */
+        .rating-section .stars {
+            color: var(--accent-yellow);
+            font-size: 22px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 480px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-item i {
+            color: var(--primary-green);
+            font-size: 18px;
+            width: 24px;
+            text-align: center;
+        }
+
+        /* Specifications Table */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .specs-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .specs-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .specs-table td:first-child {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .specs-table td:last-child {
+            color: var(--text-medium);
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+
+        .btn {
+            padding: 18px 30px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: var(--transition);
+            text-decoration: none;
+            text-align: center;
+            border: none;
+            flex: 1;
+        }
+
+        .btn-cart {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            color: white;
+            box-shadow: 0 6px 20px rgba(67, 166, 56, 0.3);
+        }
+
+        .btn-cart:hover,
+        .btn-cart:focus {
+            background: linear-gradient(135deg, #3a8e32, #1b5e20);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(67, 166, 56, 0.4);
+            outline: 2px solid var(--primary-light);
+        }
+
+        .btn-wishlist {
+            background: linear-gradient(135deg, #ff6b6b, var(--accent-red));
+            color: white;
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-wishlist:hover,
+        .btn-wishlist:focus {
+            background: linear-gradient(135deg, #ff5252, #ff3333);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+            outline: 2px solid #ff6b6b;
+        }
+
+        /* Contact */
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .contact-method:hover,
+        .contact-method:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-color: #005eff;
+            outline: none;
+        }
+
+        /* Additional Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-item {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            transition: var(--transition);
+        }
+
+        .info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Reviews */
+        .reviews-section {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #e9ecef;
+        }
+
+        .review-item {
+            border-bottom: 2px solid #f0f0f0;
+            padding: 20px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .review-item:hover {
+            background-color: rgba(0, 113, 0, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 0 -20px;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* Progress Bars */
+        .rating-summary {
+            display: flex;
+            gap: 30px;
+            margin: 20px 0;
+            align-items: center;
+        }
+
+        .rating-score {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .rating-bars {
+            flex: 1;
+        }
+
+        .rating-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 5px 0;
+        }
+
+        .rating-bar span {
+            width: 50px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .bar-container {
+            flex: 1;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-yellow), #ff9800);
+            border-radius: 4px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes cartBounce {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .btn-cart:active {
+            animation: cartBounce 0.3s ease;
+        }
+
+        .btn-wishlist:active {
+            animation: cartBounce 0.3s ease;
+        }
+
+        /* Badges */
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .badge-green {
+            background: rgba(67, 166, 56, 0.1);
+            color: var(--primary-dark);
+            border: 1px solid var(--primary-light);
+        }
+
+        .badge-blue {
+            background: rgba(0, 94, 255, 0.1);
+            color: #005eff;
+            border: 1px solid #005eff;
+        }
+
+        .badge-orange {
+            background: rgba(255, 193, 7, 0.1);
+            color: #c06600;
+            border: 1px solid #ffc107;
+        }
+
+        /* Stock Indicator */
+        .stock-indicator {
+            margin: 15px 0;
+        }
+
+        .stock-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .stock-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-light), var(--primary-green));
+            border-radius: 4px;
+            width: 75%;
+        }
+
+        .stock-text {
+            font-size: 14px;
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="detail-container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+            <a href="../../index.html">Accueil</a> &gt;
+            <a href="../automobile.html">Automobile</a> &gt;
+            <span>Cadillac SUV 2025</span>
+        </nav>
+
+        <div class="product-header">
+            <a href="../automobile.html" class="back-btn" aria-label="Retour à la liste des véhicules">
+                <i class="fa-solid fa-arrow-left"></i>
+                Retour aux véhicules
+            </a>
+            <h1 class="product-title">Cadillac SUV 2025 - Édition Prestige</h1>
+            <span class="sr-only">Fiche détaillée du produit</span>
+        </div>
+
+        <div class="product-content">
+            <!-- Image Gallery -->
+            <div class="product-image-container">
+                <img src="../../images/automobile.jpg"
+                    alt="Cadillac SUV 2025 Édition Prestige de couleur noire, vue de trois-quarts avant"
+                    class="product-image" loading="lazy">
+                <div class="image-indicators">
+                    <button class="image-indicator active" aria-label="Voir l'image 1"></button>
+                    <button class="image-indicator" aria-label="Voir l'image 2"></button>
+                    <button class="image-indicator" aria-label="Voir l'image 3"></button>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <!-- Price Section -->
+                <div class="price-section">
+                    <div class="current-price">
+                        <i class="fa-solid fa-tag" aria-hidden="true"></i>
+                        <span>549.500 FCFA</span>
+                        <span class="discount-badge" aria-label="Réduction de 8%">-8%</span>
+                    </div>
+                    <div class="old-price" aria-label="Ancien prix">600.000 FCFA</div>
+
+                    <div class="price-per-month">
+                        <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
+                        183.167 FCFA/mois sur 3 mois
+                    </div>
+
+                    <div class="stock-indicator">
+                        <div class="stock-text">
+                            <span>Disponibilité :</span>
+                            <span>12 unités restantes</span>
+                        </div>
+                        <div class="stock-bar">
+                            <div class="stock-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Badges -->
+                <div class="badges">
+                    <span class="badge badge-green">
+                        <i class="fa-solid fa-check"></i> Garantie 3 ans
+                    </span>
+                    <span class="badge badge-blue">
+                        <i class="fa-solid fa-truck"></i> Livraison gratuite
+                    </span>
+                    <span class="badge badge-orange">
+                        <i class="fa-solid fa-shield-alt"></i> Paiement sécurisé
+                    </span>
+                </div>
+
+                <!-- Rating -->
+                <!-- <div class="info-card rating-section">
+                    <div class="rating-summary">
+                        <div class="rating-score">4.5</div>
+                        <div class="rating-bars">
+                            <div class="rating-bar">
+                                <span>5★</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 70%"></div>
+                                </div>
+                                <span>70%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>4★</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 20%"></div>
+                                </div>
+                                <span>20%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>3★</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 8%"></div>
+                                </div>
+                                <span>8%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stars" aria-label="Note de 4.5 étoiles sur 5">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-alt"></i>
+                        <span>4.5/5 (734 avis)</span>
+                    </div>
+                </div>
+
+                <!-- Key Specifications -->
+                <div class="info-card">
+                    <h2 class="section-title">
+                        <i class="fa-solid fa-list-check"></i>
+                        Caractéristiques principales
+                    </h2>
+                    <table class="specs-table">
+                        <tr>
+                            <td>Moteur</td>
+                            <td>V8 turbo 4.0L 550ch</td>
+                        </tr>
+                        <tr>
+                            <td>Transmission</td>
+                            <td>Automatique 10 vitesses</td>
+                        </tr>
+                        <tr>
+                            <td>Consommation</td>
+                            <td>9.8L/100km (mixte)</td>
+                        </tr>
+                        <tr>
+                            <td>Accélération</td>
+                            <td>0-100 km/h en 4.8s</td>
+                        </tr>
+                        <tr>
+                            <td>Dimensions</td>
+                            <td>5020 x 2010 x 1770 mm</td>
+                        </tr>
+                        <tr>
+                            <td>Coffre</td>
+                            <td>722 à 2050 litres</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Features -->
+                <div class="info-card">
+                    <h2 class="section-title">
+                        <i class="fa-solid fa-star"></i>
+                        Équipements
+                    </h2>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fa-solid fa-chair"></i>
+                            <span>Intérieur cuir Nappa</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-satellite-dish"></i>
+                            <span>GPS 4D réalité augmentée</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-video"></i>
+                            <span>Caméras 360°</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-volume-up"></i>
+                            <span>Audio AKG 36 HP</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-sun"></i>
+                            <span>Toit panoramique</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-thermometer-half"></i>
+                            <span>Sièges massants</span>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Contact -->
+                <div class="info-card">
+                    <h2 class="section-title">
+                        <i class="fa-solid fa-phone"></i>
+                        Contact et support
+                    </h2>
+                    <div class="contact-methods">
+                        <a href="tel:+221771234567" class="contact-method">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <strong>Appeler</strong>
+                                <div>+221 77 123 45 67</div>
+                            </div>
+                        </a>
+                        <a href="mailto:contact@emashop.com" class="contact-method">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <div>contact@emashop.com</div>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/221771234567" class="contact-method" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <div>Message direct</div>
+                            </div>
+                        </a>
+                        <a href="../contact.html" class="contact-method">
+                            <i class="fa-solid fa-comment-dots"></i>
+                            <div>
+                                <strong>Formulaire</strong>
+                                <div>Contact en ligne</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <a href="../panier.html?produit=cadillac-suv-2025&prix=549500" class="btn btn-cart"
+                        aria-label="Ajouter Cadillac SUV 2025 au panier">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Ajouter au panier
+                    </a>
+                    <button class="btn btn-wishlist" aria-label="Ajouter aux favoris">
+                        <i class="fa-solid fa-heart"></i>
+                        Ajouter aux favoris
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="additional-info">
+            <h2 class="section-title">
+                <i class="fa-solid fa-info-circle"></i>
+                Services inclus
+            </h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fa-solid fa-shipping-fast"></i>
+                    <h3>Livraison Express</h3>
+                    <p>Livraison gratuite en 48h</p>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-shield-alt"></i>
+                    <h3>Garantie Étendue</h3>
+                    <p>3+1 ans garantie</p>
+                </div>
+                <!-- <div class="info-item">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <h3>Financement</h3>
+                    <p>3x sans frais disponible</p>
+                </div> -->
+            </div>
+        </div>
+
+        
+    </div>
+</body>
+
+</html>
