@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #95b995dc;
+    background: #becabedc;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -136,7 +136,7 @@ body {
 .container-categorie {
     width: 100%;
     height: 60px;
-    background: #95b995;
+    background: #cddbcd;
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     position: fixed;
@@ -166,8 +166,13 @@ h2 {
     gap: 20px;
 }
 
+.fa-bars {
+    color: #00c000;
+    border: 1px solid #ffffff00;
+}
+
 .fa-solid {
-    color: #018f0a;
+    color: #000000;
     font-size: 18px;
     margin-right: 10px;
     cursor: pointer;
@@ -203,7 +208,7 @@ h2 {
     backdrop-filter: blur(15px) saturate(180%);
     -webkit-backdrop-filter: blur(15px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
+    border-radius: 1 0px;
     padding: 15px;
     position: relative;
     top: 70px;
@@ -318,6 +323,8 @@ h2 {
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(25, 166, 25, 0.168);
     padding: 20px;
+    position: relative;
+        top: 200px;
 }
 
 .reserver {
@@ -596,17 +603,16 @@ h1 {
 }
 
 .container-categorie h2 {
-    color: #219e01;
+    color: #000000;
     font-size: 24px;
-    font-weight: 700;
 }
 
 .fa-clock-rotate-left,
 .fa-user {
-    padding: 8px;
+    padding: 5px 20px;
     background: #fffdfd;
-    border: 1px solid #7bcc66;
-    border-radius: 50%;
+    border: 1px solid #a4d5a4dc;
+    border-radius: 10%;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -711,7 +717,7 @@ h1 {
 }
 
 .reserver {
-    color: #43a638;
+    color: #464646;
     text-align: center;
     margin-bottom: 10px;
 }
