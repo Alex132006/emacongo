@@ -173,7 +173,7 @@ h2 {
 
 .fa-solid {
     color: #000000;
-    font-size: 18px;
+    font-size: 15px;
     margin-right: 10px;
     cursor: pointer;
 }
@@ -324,7 +324,7 @@ h2 {
     box-shadow: 0 0 10px rgba(25, 166, 25, 0.168);
     padding: 20px;
     position: relative;
-        top: 200px;
+        top: 50px;
 }
 
 .reserver {
@@ -609,9 +609,9 @@ h1 {
 
 .fa-clock-rotate-left,
 .fa-user {
-    padding: 5px 20px;
+    padding: 3px 12px;
     background: #fffdfd;
-    border: 1px solid #a4d5a4dc;
+    border: 1px solid #000000;
     border-radius: 10%;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -619,9 +619,9 @@ h1 {
 
 .fa-clock-rotate-left:hover,
 .fa-user:hover {
-    background: #f4f4f4cc;
-    color: rgb(76, 189, 61);
-    border: 1px solid #eee;
+    background: #b1cab885;
+    color: rgb(0, 0, 0);
+    border: 1px solid #747070;
 }
 
 /* Image Pub */
